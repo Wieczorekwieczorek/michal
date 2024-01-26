@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        body.scroll-lock {
+    overflow: hidden;
+}
+
+        header {
+            
+            background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(71,71,193,1) 60%, rgba(0,212,255,1) 100%);
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .navbar {
+            min-height: 10rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 24px;
+        }
+
+        .nav-menu {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .nav-links {
+            transition: 0.7s ease;
+            font-size: 1.3rem;
+        }
+        .nav-links:hover{
+            color:greenyellow;
+        }
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+
+        .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            background-color: white;
+            transition: 0.3s;
+        }
+
+        .hamburger.active .bar:nth-child(1),
+        .hamburger.active .bar:nth-child(2),
+        .hamburger.active .bar:nth-child(3) {
+            background-color: white;
+        }
+            .pierwszyelement{
+                width: 100%;
+                height: 65vh;
+                background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(71,71,193,1) 60%, rgba(0,212,255,1) 100%);
+                border-bottom-left-radius: 80% 60%;
+            border-bottom-right-radius: 80% 60%;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            margin-top: -80px;
+}
+    .hi{
+        font-size: 4rem;
+        color: white;
+       
+    }
+    .omnie{
+        font-size: 20px;
+        color: white;
+        margin: 15px;
+    }
+
+
+
+
+
+        .spacer{
+            width: 100%;
+            height: 100px;
+        }
+                    .text{
+                        font-family: fantasy;
+                        width: 100%;
+                        height: 20rem;
+                        justify-content: center;
+                               font-size: 20px; 
+                        text-align: center;
+                       
+                        display: flex;
+                        
+                        display: inline;
+                    }
+                    
+                    .text h3{
+                        color: greenyellow;
+                        margin: 1rem 0px;
+                        font-family: monospace;
+                        font-size: 25px;
+                    }
+                    .ikony{
+                        margin: 2rem 0px;
+                        font-size: 2.4rem;
+                        
+                        text-align: center;
+                    }
+                    .ikony i{
+                        padding: 1rem;
+                        cursor: pointer;
+                        color: black;
+                    }
+                    .ikony i:hover{
+                        color: greenyellow;
+                    }
+                    .doswiadczenie {
+                       font-size: 30px;
+                        text-align: center;
+                        font-family: monospace;
+                       
+                    }
+                    hr{
+                        width: 30%;
+                       margin: 20px auto 20px auto;
+                        height: 0.3rem;
+                        background-color: greenyellow;
+                        
+                    }
+
+                    .prace{
+                        display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+                    }
+                    .pierwszapraca{
+                        
+                        width: 550px;
+            height: 400px;
+            -webkit-box-shadow: 1px 1px 46px -1px rgba(0,0,0,1);
+-moz-box-shadow: 1px 1px 46px -1px rgba(0,0,0,1);
+box-shadow: 1px 1px 46px -1px rgba(0,0,0,1);
+border-radius: 15px;
+            margin: 10px;
+            text-align: center;
+            line-height: 100px;
+                    }
+                    .pierwszapraca h2{
+                        font-family: fantasy;
+                    }
+                    .pierwszapraca p{
+                        font-family: monospace;
+                        font-size: 20px;
+                    }
+                    .drugapraca p{
+                        font-family: monospace;
+                        font-size: 20px;
+                    }
+                    .drugapraca h2{
+                        font-family: fantasy;
+                    }
+                    .pierwszapraca img{
+                        margin: 10px;
+                        margin-left: auto;
+      margin-right: auto;
+                    }
+
+                    .drugapraca{
+                        border-radius: 15px;
+                        width: 550px;
+            height: 400px;
+            -webkit-box-shadow: 1px 1px 46px -1px rgba(0,0,0,1);
+-moz-box-shadow: 1px 1px 46px -1px rgba(0,0,0,1);
+box-shadow: 1px 1px 46px -1px rgba(0,0,0,1);
+            margin: 10px;
+            text-align: center;
+            line-height: 100px;
+                    }
+
+
+                    #myButton {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: white;
+            border: 2px solid black;
+            color: black;
+            
+            border-radius: 40px;
+            cursor: pointer;
+        }
+       .angielski{
+        width: 100%;
+        height: 19rem;
+        background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(71,71,193,1) 60%, rgba(0,212,255,1) 100%);
+       display: flex;
+       justify-content: center;
+       flex-direction: column;
+       text-align: center;
+       }
+       .angielski p{
+        margin: 15px 0;
+        font-family: fantasy;
+        font-size: 22px;
+
+       }
+       .dot-container {
+        
+            display: flex;
+            justify-content: center;
+        }
+       .dot {
+            width: 1cm;
+            height: 1cm;
+            border-radius: 50%;
+            margin-right: 5px;
+           
+        }
+        .green-dot:hover{
+            background-color: greenyellow;
+        }
+        .green-dot {
+            background-color: green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    font-weight: bold;
+        }
+
+        .white-dot {
+            background-color: white;
+            border: 2px solid black;
+            display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+        }
+        .white-dot:hover{
+            background-color: red;
+        }
+
+        @media (max-width: 768px) {
+            .pierwszapraca p{
+                font-size: 15px;
+            }
+            .drugapraca p{
+                font-size: 15px;
+            }
+            .prace{
+                        display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;}
+
+            
+            .hamburger {
+                display: block;
+                
+            }
+
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 10rem;
+                gap: 0;
+                flex-direction: column;
+                background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(71,71,193,1) 60%, rgba(0,212,255,1) 100%);
+                width: 100%;
+                height: 70%;
+                text-align: center;
+                transition: 0.3s;
+            }
+
+            .nav-item {
+                margin: 16px 0;
+            }
+            
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .hamburger.active .bar:nth-child(1) {
+                transform: rotate(-45deg) translate(-5px, 6px);
+            }
+
+            .hamburger.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active .bar:nth-child(3) {
+                transform: rotate(45deg) translate(-5px, -6px);
+            }
+        }
+
+
+      
+
+
+
+        .wyksztalcenie{
+            width: 100%;
+            height: auto;
+            font-family: monospace;
+            text-align: center;
+            font-size: 16px;
+           
+        }
+        .wyksztalcenie i{
+            color: green;
+        }
+        .wyksztalcenie h2{
+            padding: 10px;
+             font-family: fantasy;}
+
+        .skilsy{
+            width: 100%;
+            height: auto;
+            font-family: monospace;
+            text-align: center;
+            font-size: 16px;
+        }
+        .skilsy h2{
+            padding: 10px;
+             font-family: fantasy;}
+        .skilsy i{
+            padding: 0 24px;
+            color: green;
+            font-size: 22px;
+            
+        }
+        .pierwszyelement h2{
+            color: white;
+            font-family: Bradley Hand, cursive	;
+            font-size: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav">
+        <header>
+            <nav class="navbar">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="cv.html" class="nav-links">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-links">O mnie</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-links">Kontakt</a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </header>
+    </div>
+    <div class="pierwszyelement">
+       <h2>Hello Word</h2>
+
+        <p class="omnie">
+        Jestem Michał i zapraszam do zapoznania się z moim starzem pracy i zdobytym doświadczeniem.
+    </p>
+        
+    </div>
+    <div class="spacer"></div>
+    <div class="text">
+        <h1>Poznaj mnie lepiej</h3> 
+        <h3>Sprawdz moje portfolio</h3>
+        
+    </div>
+    <div class="ikony">
+        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-brands fa-facebook"></i></a>
+        <a href="https://www.twitter.com" target="_blank"><i class="fab fa-brands fa-twitter"></i></a>
+        <a href="https://www.github.com" target="_blank"><i class="fab fa-brands fa-github"></i></a>
+    </div>
+
+            <div class="doswiadczenie">
+                <p>Doświadczenie zawodowe</p>
+            </div>
+            <hr>
+            <div class="spacer"></div>
+            <div class="prace">
+                <div class="pierwszapraca">
+                    <img src="fuji.png" alt="">
+                    <h2>It support - Fujitsu</h2>
+                    <p>Dwa lata stażu</p>
+                </div>
+                <div class="drugapraca">
+                    <img src="wieza.png" alt=""><h2>It support - Wieża s.c</h2>
+                    <p>Współpraca od połowy 2023 roku - obecnie</p></div>
+            </div>
+            <div class="spacer"></div>
+                <div class="angielski">
+                    <p>Mój obecny poziom języka angielskiego</p>
+                    <div class="dot-container">
+                        <div class="dot green-dot">A1</div>
+                        <div class="dot green-dot">A2</div>
+                        <div class="dot green-dot">B1</div>
+                        <div class="dot green-dot">B2</div>
+                        <div class="dot white-dot">C1</div>
+                    </div>
+
+                </div>
+                <div class="spacer"></div>
+                <div class="wyksztalcenie">
+                    <h2>wyksztalcenie</h2>
+                    <i class="fas fa-solid fas fa-check"></i>Uniwersytet WSB Metiro<br>
+                    <i class="fas fa-solid fas fa-check"></i> Technikum nr 7 w Kielcach
+                    <div class="spacer"></div>
+                    <h2>Certyfiakty</h2>
+                    <i class="fas fa-solid fas fa-check"></i> Egzamin zawodowy E12
+                    </div>
+                    <div class="spacer"></div>
+                <div class="skilsy">
+                    <h2>Umiejętności</h2>
+                    
+
+                    <i class="fas fa-solid fas fa-check"></i>Dobra, praktyczna znajomość systemów operacyjnych z rodziny MS Windows<br>
+
+                    <i class="fas fa-solid fas fa-check"></i>Dobra, praktyczna znajomość budowy komputerów<br>
+
+                    <i class="fas fa-solid fas fa-check"></i>Dobra znajomość programów pocztowych<br>
+
+                    <i class="fas fa-solid fas fa-check"></i>Dobra znajomość pakietu MS Office<br>
+
+                    <i class="fas fa-solid fas fa-check"></i>Dobra znajomość budowy sieci komputerowych<br>
+
+                    <i class="fas fa-solid fas fa-check"></i>Znajomość protokołu TCP/IP<br>
+                    <i class="fas fa-solid fas fa-check"></i>Dobra organizacja pracy<br>
+                </div>
+                <div class="spacer"></div>
+
+
+
+
+
+            <button class="up" id="myButton"><i class="fas fa-solid fas fa-chevron-up"></i></button>
+            <script>
+                const hamburger = document.querySelector(".hamburger");
+                const navmenu = document.querySelector(".nav-menu");
+        
+                hamburger.addEventListener("click", () => {
+                    hamburger.classList.toggle("active");
+                    navmenu.classList.toggle("active");
+        
+                
+                    document.body.classList.toggle("scroll-lock");
+                });
+        
+                window.onscroll = function() {
+                    scrollFunction()
+                };
+        
+                function scrollFunction() {
+                    var button = document.getElementById("myButton");
+                    if (document.body.scrollTop > window.innerHeight / 2 || document.documentElement.scrollTop > window.innerHeight / 2) {
+                        button.style.display = "block";
+                    } else {
+                        button.style.display = "none";
+                    }
+                }
+        
+                function scrollToTop() {
+                    document.body.scrollTop = 0; 
+                    document.documentElement.scrollTop = 0;
+                }
+        
+                document.getElementById("myButton").addEventListener("click", scrollToTop);
+            </script>
+            <script src="https://kit.fontawesome.com/da13f7c1e6.js" crossorigin="anonymous"></script>
+        </body>
+        
+        </html>
