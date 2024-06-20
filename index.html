@@ -359,6 +359,15 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(71,71,193,1) 60%, rgb
             font-family: Bradley Hand, cursive	;
             font-size: 40px;
         }
+        .data{
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 26px;
+            width: 100%;
+            height: 100px;
+           margin-top: 50px;
+            text-align: center;
+
+        }
     </style>
 </head>
 
@@ -368,7 +377,7 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(71,71,193,1) 60%, rgb
             <nav class="navbar">
                 <ul class="nav-menu">
                     <li class="nav-item">
-                        <a href="index.html" class="nav-links">Home</a>
+                        <a href="cv.html" class="nav-links">Home</a>
                     </li>
                     <li class="nav-item">
                         <a href="about.html" class="nav-links">O mnie</a>
@@ -459,8 +468,11 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(71,71,193,1) 60%, rgb
                     <i class="fas fa-solid fas fa-check"></i>Znajomość protokołu TCP/IP<br>
                     <i class="fas fa-solid fas fa-check"></i>Dobra organizacja pracy<br>
                 </div>
-                <div class="spacer"></div>
-
+                <div class="data">  <div class="clock">
+                    <div class="time" id="time"></div>
+                    <div class="date" id="date"></div>
+                </div></div>
+               
 
 
 
@@ -497,6 +509,22 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(71,71,193,1) 60%, rgb
                 }
         
                 document.getElementById("myButton").addEventListener("click", scrollToTop);
+                function updateClock() {
+            const now = new Date();
+            const time = now.toLocaleTimeString();
+            const date = now.toLocaleDateString('pl-PL', {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+
+            document.getElementById('time').textContent = time;
+            document.getElementById('date').textContent = date;
+        }
+
+        setInterval(updateClock, 1000);
+        updateClock(); 
             </script>
             <script src="https://kit.fontawesome.com/da13f7c1e6.js" crossorigin="anonymous"></script>
         </body>
